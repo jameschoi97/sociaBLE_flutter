@@ -24,7 +24,7 @@ class MainMenuPage extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Enter your ID',
+                      hintText: 'Enter your ID',
                     ),
                   ),
                 )

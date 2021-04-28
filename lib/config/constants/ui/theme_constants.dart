@@ -42,6 +42,10 @@ abstract class SociableTheme {
       return BorderSide(color: colorSet.buttonBorder);
     })
   );
+  
+  ButtonStyle get chatButtonStyle => ButtonStyle(
+    shape: MaterialStateProperty.resolveWith((states) => null)
+  )
 
 
   String get name;
