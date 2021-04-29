@@ -17,8 +17,8 @@ class ChatroomPage extends StatelessWidget {
             appBar: AppBar(
               title: Text('CHAT'),
               backgroundColor: Colors.white,
-              iconTheme: IconThemeData(color: Colors.blue),
-              textTheme: TextTheme(headline6: TextStyle(color: Colors.blue)),
+              iconTheme: IconThemeData(color: _themeController.theme.colorSet.sociableBlue),
+              textTheme: TextTheme(headline6: TextStyle(color: _themeController.theme.colorSet.sociableBlue)),
             ),
             body: Column(children: [
               Expanded(
@@ -27,21 +27,25 @@ class ChatroomPage extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 30,
-                    width: 30,
                     margin: EdgeInsets.only(left: 10, right: 10),
-                    child: FloatingActionButton(
-                      onPressed: (){},
-                      child: Icon(Icons.add, color: Colors.white),
-                      backgroundColor: Colors.blue,
-                      elevation: 0,
-                    ),
+                    child: GestureDetector(
+                      onTap: (){},
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: _themeController.theme.colorSet.sociableBlue,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Icon(Icons.add, color: Colors.white),
+                      )
+                    )
                   ),
                   Expanded(
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: 'Write message...',
-                          hintStyle: TextStyle(color: Colors.black54),
+                          hintStyle: TextStyle(color: _themeController.theme.colorSet.hintText),
                           border: InputBorder.none,
                         ),
                       )
@@ -50,8 +54,8 @@ class ChatroomPage extends StatelessWidget {
                     margin: EdgeInsets.only(left: 10, right: 10),
                     child: TextButton(
                         onPressed: (){},
-                      child: Icon(Icons.send,color: Colors.blue, size: 20,),
-                      style: _themeController.buttonStyle,
+                      child: Text('SEND', style: TextStyle(color: Colors.white),),
+                      style: _themeController.chatButtonStyle,
                     ),
                   )
                 ],
