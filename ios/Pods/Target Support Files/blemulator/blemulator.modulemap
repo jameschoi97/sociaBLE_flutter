@@ -1,0 +1,6 @@
+framework module blemulator {
+  umbrella header "blemulator-umbrella.h"
+
+  export *
+  module * { export * }
+}

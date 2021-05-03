@@ -1,0 +1,36 @@
+PODS:
+  - blemulator (1.2.1):
+    - Flutter
+    - MultiplatformBleAdapter (~> 0.1.7)
+  - Flutter (1.0.0)
+  - flutter_ble_lib (2.3.2):
+    - Flutter
+    - MultiplatformBleAdapter (~> 0.1.8)
+  - MultiplatformBleAdapter (0.1.8)
+
+DEPENDENCIES:
+  - blemulator (from `.symlinks/plugins/blemulator/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_ble_lib (from `.symlinks/plugins/flutter_ble_lib/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MultiplatformBleAdapter
+
+EXTERNAL SOURCES:
+  blemulator:
+    :path: ".symlinks/plugins/blemulator/ios"
+  Flutter:
+    :path: Flutter
+  flutter_ble_lib:
+    :path: ".symlinks/plugins/flutter_ble_lib/ios"
+
+SPEC CHECKSUMS:
+  blemulator: 5616ea6aba4619afaaca9a5bdd1caf61fd2d3af3
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_ble_lib: 675f6ceaa6cd6a675bba408b705042458a782101
+  MultiplatformBleAdapter: bdfdd698ea5d816f0f389eda13d5b07a1bc74b59
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1

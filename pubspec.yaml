@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.1.1
+  blemulator: ^1.2.1
+  flutter_ble_lib: ^2.3.2
 
 
   # The following adds the Cupertino Icons font to your application.

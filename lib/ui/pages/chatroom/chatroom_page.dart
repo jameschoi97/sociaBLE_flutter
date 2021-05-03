@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sociable/ble/peripheral_controller.dart';
 import 'package:sociable/config/constants/ui/theme_constants.dart';
 
 import 'action/chat_input_controller.dart';
@@ -12,6 +13,7 @@ class ChatroomPage extends StatelessWidget {
   final _themeController = Get.find<SociableThemeController>();
   final _chatInputController = Get.find<ChatInputController>();
   final _chatScrollController = Get.find<ChatScrollController>();
+  final _peripheralController = Get.find<PeripheralController>();
 
   List<ChatMessage> messages = [
     ChatMessage(messageContent: 'Hey there', messageType: 'receiver'),
@@ -29,20 +31,26 @@ class ChatroomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _screenWidth = MediaQuery.of(context).size.width.obs;
+    _peripheralController.initialize('id');
     return Container(
       color: _themeController.theme.colorSet.backgroundColor,
       child: SafeArea(
         child: Scaffold(
-            appBar: AppBar(
-              title: Text('CHAT'),
-              backgroundColor: Colors.white,
-              iconTheme: IconThemeData(
-                  color: _themeController.theme.colorSet.sociableBlue),
-              textTheme: TextTheme(
-                  headline6: TextStyle(
-                      color: _themeController.theme.colorSet.sociableBlue)),
-            ),
             body: Column(children: [
+              Row(children: [
+                IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: _themeController.theme.colorSet.sociableBlue,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }
+                    ),
+                Expanded(
+                    child: Text('CHATROOM')
+                ),
+              ]),
               Expanded(
                   child: Obx(() => ListView.builder(
                         controller: _chatScrollController,
@@ -58,9 +66,7 @@ class ChatroomPage extends StatelessWidget {
                                     maxWidth: _screenWidth.value * 0.8,
                                   ),
                                   margin: EdgeInsets.only(
-                                      left: 10,
-                                      right: 10,
-                                      bottom: 8),
+                                      left: 10, right: 10, bottom: 8),
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 12, vertical: 8),
                                   decoration: BoxDecoration(

@@ -1,0 +1,3 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MultiplatformBleAdapter.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/blemulator.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/flutter_ble_lib.framework
